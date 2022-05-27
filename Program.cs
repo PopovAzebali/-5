@@ -10,19 +10,18 @@ namespace _5
     {
         static void Main(string[] args)
         {
-            string firstName = "Попов";
-            string lastName = "Алексей";
-            string reserve;
-
-            Console.WriteLine("До исправления");
-            Console.WriteLine("Имя : " + firstName);
-            Console.WriteLine("Фамилия : " + lastName);
-            reserve = firstName;
-            firstName = lastName;
-            lastName = reserve;
-            Console.WriteLine("После исправления");
-            Console.WriteLine("Имя : " + firstName);
-            Console.WriteLine("Фамилия : " + lastName);
+           int playerMoney;
+        	int crystalPrise = 3;
+          
+        	
+            Console.WriteLine("Добро пожаловать в мою лавку, путник!");
+            Console.WriteLine("Сколько золота ты можешь потратить?");
+            playerMoney = Convert.ToInt32 (Console.ReadLine());
+            Console.WriteLine("Значит у тебя есть " + playerMoney + " золотых.");
+            int crystalSell = playerMoney / crystalPrise;
+            int playerRemains = playerMoney - (crystalSell * crystalPrise);
+            
+            Console.WriteLine("За это количество монет я могу дать тебе " + crystalSell + " кристалов и у тебя останется еще " + playerRemains + " золотых!");
         }
     }
 }
