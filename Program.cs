@@ -10,19 +10,22 @@ namespace _5
     {
         static void Main(string[] args)
         {
-          float crystalPrise = 3f;
-            int crystalPlayer = 0;
-            Console.WriteLine("Сколько золота у тебя есть?");
-            float goldPlayer = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Сколько человек в очереди перед Вами?");
+            int numberPeople = Convert.ToInt32(Console.ReadLine());
+            int timeClient = 10;
+            int totalTime = numberPeople * timeClient;
+            int minutesInOneHour = 60;
+            int timeInHours = totalTime / minutesInOneHour;
+            int timeInMinutes = totalTime % minutesInOneHour;
 
-            Console.WriteLine($"Цена одного кристала {crystalPrise}.\nСколько кристалов хочешь приобрести.");
-
-            int countPurchasedCrystals = Convert.ToInt32(Console.ReadLine());
-
-            goldPlayer = goldPlayer - crystalPrise * countPurchasedCrystals;
-            crystalPlayer += countPurchasedCrystals;
-
-            Console.WriteLine($"Колличество золота - {goldPlayer}\nколличество кристалов - {crystalPlayer}");
+            if (totalTime >= minutesInOneHour)
+            {
+                Console.WriteLine("Вам предстоит простоять в очереди " + timeInHours + " часов и " + timeInMinutes + " минут.");
+            }
+            else
+            {
+                Console.WriteLine("Вам предстоит простоять в очереди " + totalTime + " минут.");
+            }
         }
     }
 }
